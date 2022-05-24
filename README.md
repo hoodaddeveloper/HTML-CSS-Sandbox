@@ -1,2 +1,2 @@
-# 12-HTML-CSS-Sandbox
+# HTML-CSS-Sandbox
 Multiple files for more practicing HTML &amp; CSS.
