@@ -1,12 +1,12 @@
 p {
-  background-color: yellow;
-  color: red !important;
   font-size: 24pt;
+  color: red !important;
+  background-color: yellow;
 }
 
 .p1 {
-  background-color: lime;
   color: red;
+  background-color: lime;
 }
 	
 #p1 {
