@@ -12,27 +12,61 @@
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
   <style>
-    .box {
+    .box1 {
       width: 450px;
       height: 300px;
       padding: 20px;
-      overflow: hidden;
-      border: 10px solid gray;
+      border: 10px dashed gray;
+      background-clip:border-box;
+      background-color: #c3ffff;
+    }
+
+    .box2 {
+      width: 450px;
+      height: 300px;
+      padding: 20px;
+      border: 10px dashed gray;
+      background-clip:padding-box;
+      background-color: #c3ffff;
+    }
+
+    .box3 {
+      width: 450px;
+      height: 300px;
+      padding: 20px;
+      border: 10px dashed gray;
+      background-clip:content-box;
+      background-color: #c3ffff;
     }
   </style>
 </head>
 
 <body>
 
-  <div class="box">
+  <div class="row p-5 ms-3">
+    <div class="box1">
     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium natus beatae dignissimos. Aperiam hic, eveniet
     fugiat consequatur enim facere, aut ex quos harum vitae natus nisi accusantium est dicta quaerat eaque temporibus
     asperiores quidem explicabo! Nemo minus repellendus in sapiente cumque adipisci omnis, explicabo nihil natus nulla
     praesentium repellat, unde nostrum accusamus rem molestias. Fugit modi quidem animi, consectetur laudantium
-    quibusdam totam rerum reprehenderit accusantium dolore deserunt explicabo, magnam incidunt unde ab quia dicta
-    molestiae aperiam odio ad sunt dignissimos? Harum fugiat natus reprehenderit adipisci sint laborum. Modi repudiandae
-    quas vero facilis unde fuga, minus quis dicta sed, rem aliquid.
+    quibusdam totam rerum reprehenderit.
   </div>
+  <div class="box2 ms-5">
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium natus beatae dignissimos. Aperiam hic, eveniet
+    fugiat consequatur enim facere, aut ex quos harum vitae natus nisi accusantium est dicta quaerat eaque temporibus
+    asperiores quidem explicabo! Nemo minus repellendus in sapiente cumque adipisci omnis, explicabo nihil natus nulla
+    praesentium repellat, unde nostrum accusamus rem molestias. Fugit modi quidem animi, consectetur laudantium
+    quibusdam totam rerum reprehenderit.
+  </div>
+  <div class="box3 ms-5">
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium natus beatae dignissimos. Aperiam hic, eveniet
+    fugiat consequatur enim facere, aut ex quos harum vitae natus nisi accusantium est dicta quaerat eaque temporibus
+    asperiores quidem explicabo! Nemo minus repellendus in sapiente cumque adipisci omnis, explicabo nihil natus nulla
+    praesentium repellat, unde nostrum accusamus rem molestias. Fugit modi quidem animi, consectetur laudantium
+    quibusdam totam rerum reprehenderit.
+  </div>
+  </div>
+  
 
   <!-- Bootstrap JavaScript Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
