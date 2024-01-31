@@ -18,11 +18,37 @@
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
 
   <style>
-    div {
+    .box1,
+    .box2,
+    .box3 {
       float: left;
       width: 100px;
       height: 100px;
       margin: 5px;
+    }
+
+    .container {
+      width: 500px;
+      height: 200px;
+      position: relative;
+      background-color: #d3d3d3;
+      ;
+    }
+
+    .box4 {
+      left: 0;
+      width: 50%;
+      height: 100%;
+      position: absolute;
+      background-color: red;
+    }
+
+    .box5 {
+      right: 0;
+      width: 50%;
+      height: 100%;
+      position: absolute;
+      background-color: blue;
     }
   </style>
 </head>
@@ -96,6 +122,11 @@
     <div class="box1 bg-primary"></div>
     <div class="box2 bg-danger"></div>
     <div class="box3 bg-info"></div>
+  </div>
+
+  <div class="container">
+    <div class="box4"></div>
+    <div class="box5"></div>
   </div>
 
   <!-- Bootstrap JavaScript Libraries -->
