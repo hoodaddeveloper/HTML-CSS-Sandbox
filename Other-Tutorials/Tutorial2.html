@@ -47,6 +47,16 @@
       height: 100%;
       position: absolute;
     }
+
+    .father {
+      width: 500px;
+      height: 500px;
+    }
+
+    .test {
+      width: 50px;
+      height: 50px;
+    }
   </style>
 </head>
 
@@ -114,6 +124,20 @@
   <div class="container">
     <div class="box4 bg-primary bg-gradient"></div>
     <div class="box5 bg-danger bg-gradient bg-opacity-75"></div>
+  </div>
+
+  <br>
+
+  <div class="father position-relative bg-light">
+    <span class="test position-absolute bg-dark top-0 start-0"></span>
+    <span class="test position-absolute bg-dark top-0 end-0"></span>
+    <span class="test position-absolute bg-dark top-50 end-50"></span>
+    <span class="test position-absolute bg-dark bottom-0 start-0"></span>
+    <span class="test position-absolute bg-dark bottom-0 end-0"></span>
+    <span class="test position-absolute bg-dark top-50 start-0"></span>
+    <span class="test position-absolute bg-dark top-50 end-0"></span>
+    <span class="test position-absolute bg-dark top-0 end-50"></span>
+    <span class="test position-absolute bg-dark bottom-0 end-50"></span>
   </div>
 
   <!-- Bootstrap JavaScript Libraries -->
