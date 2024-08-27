@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Tutorial 3</title>
+  <title>2 Ways for positioning items to left and right</title>
   <!-- Required meta tags -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -12,25 +12,13 @@
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
   <!-- Styles -->
   <style>
-    .con-1::before {
-      border-radius: 5px;
-      content: "before content";
-      background-color: chartreuse;
-    }
-
-    .con-1::after {
-      border-radius: 5px;
-      content: "after content";
-      background-color: chartreuse;
-    }
-
-    .container::before {
+    .con-2::before {
       clear: both;
       content: "";
       display: block;
     }
 
-    .container::after {
+    .con-2::after {
       clear: both;
       content: "";
       display: block;
@@ -39,13 +27,14 @@
 </head>
 
 <body>
-  <div style="width: 437px;" class="container con-1 mb-5">
-    <!-- ::before goes here -->
-    <div style="width: 200px; height: 200px;" class="box1 bg-warning">Box</div>
-    <!-- ::after goes here -->
+  <!-- Way 1 -->
+  <div style="width: 437px; height: 230px;" class="container con-1 bg-secondary position-relative p-3 mb-5">
+    <div style="width: 200px; height: 200px; left: 20px;" class="box-1 bg-warning position-absolute">Box 1</div>
+    <div style="width: 200px; height: 200px; right: 20px;" class="box-2 bg-warning position-absolute">Box 2</div>
   </div>
 
-  <div style="width: 437px;" class="container bg-secondary p-3">
+  <!-- Way 2 -->
+  <div style="width: 437px;" class="container con-2 bg-secondary p-3">
     <div style="width: 200px; height: 200px; float: left;" class="box-1 bg-warning">Box 1</div>
     <div style="width: 200px; height: 200px; float: right;" class="box-2 bg-warning">Box 2</div>
   </div>
