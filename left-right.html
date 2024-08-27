@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>2 Ways for positioning items to left and right</title>
+  <title>3 Ways for positioning items to left and right</title>
   <!-- Required meta tags -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -28,13 +28,19 @@
 
 <body>
   <!-- Way 1 -->
-  <div style="width: 437px; height: 230px;" class="container con-1 bg-secondary position-relative p-3 mb-5">
+  <div style="width: 437px; height: 230px;" class="container con-1 bg-secondary position-relative p-3 my-5">
     <div style="width: 200px; height: 200px; left: 20px;" class="box-1 bg-warning position-absolute">Box 1</div>
     <div style="width: 200px; height: 200px; right: 20px;" class="box-2 bg-warning position-absolute">Box 2</div>
   </div>
 
   <!-- Way 2 -->
-  <div style="width: 437px;" class="container con-2 bg-secondary p-3">
+  <div style="width: 437px;" class="container con-2 bg-secondary p-3 mb-5">
+    <div style="width: 200px; height: 200px; float: left;" class="box-1 bg-warning">Box 1</div>
+    <div style="width: 200px; height: 200px; float: right;" class="box-2 bg-warning">Box 2</div>
+  </div>
+
+  <!-- Way 3 -->
+  <div style="width: 437px; display: flow-root;" class="container con-3 bg-secondary p-3 mb-5">
     <div style="width: 200px; height: 200px; float: left;" class="box-1 bg-warning">Box 1</div>
     <div style="width: 200px; height: 200px; float: right;" class="box-2 bg-warning">Box 2</div>
   </div>
