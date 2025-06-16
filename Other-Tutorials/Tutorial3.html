@@ -88,13 +88,13 @@
   <!-- EmailJS script -->
   <script>
     (function () {
-      emailjs.init("service_45xhb8s"); // My public key
+      emailjs.init("WIbvb394pnh87hVLu"); // My public key
     })();
 
     document.getElementById("contact-form").addEventListener("submit", function (e) {
       e.preventDefault();
 
-      emailjs.sendForm("your_service_id", "your_template_id", this)
+      emailjs.sendForm("service_45xhb8s", "template_49tnj0g", this) // My service ID and template ID
         .then(function (response) {
           console.log("SUCCESS!", response.status, response.text);
           document.getElementById("message").innerText = "Message sent successfully!";
