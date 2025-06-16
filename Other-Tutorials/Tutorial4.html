@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Include the EmailJS library -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
+  <title>Form 2</title>
+  <style>
+    body {
+      padding: 2rem;
+      display: flex;
+      align-items: center;
+      background: #f2f2f2;
+      justify-content: center;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .form-container {
+      width: 100%;
+      padding: 2rem;
+      max-width: 700px;
+      background: #fff;
+      border-radius: 1rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-container h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: bold;
+      margin-bottom: 0.3rem;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 0.7rem;
+      font-size: 1rem;
+      border-radius: 0.5rem;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    .inline {
+      gap: 1rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .form-container button {
+      width: 100%;
+      border: none;
+      color: white;
+      cursor: pointer;
+      padding: 0.9rem;
+      font-size: 1rem;
+      margin-top: 1.5rem;
+      border-radius: 0.5rem;
+      background: #007bff;
+    }
+
+    .form-container button:hover {
+      background: #0056b3;
+    }
+
+    .message {
+      margin-top: 1rem;
+      font-weight: bold;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="form-container">
+    <h2>Full Contact Form</h2>
+    <form id="full-form">
+      <label for="name">Name</label>
+      <input type="text" name="name" required />
+
+      <label for="email">Email</label>
+      <input type="email" name="email" required />
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" name="phone" placeholder="+49 123 456789" />
+
+      <label for="age">Age</label>
+      <input type="number" name="age" min="1" max="120" />
+
+      <label for="website">Your Website</label>
+      <input type="url" name="website" placeholder="https://example.com" />
+
+      <label for="date">Preferred Contact Date</label>
+      <input type="date" name="contact_date" />
+
+      <label for="time">Preferred Contact Time</label>
+      <input type="time" name="contact_time" />
+
+      <label for="satisfaction">Satisfaction Level (0–10)</label>
+      <input type="range" name="satisfaction" min="0" max="10" />
+
+      <label for="service">Select a Service</label>
+      <select name="service">
+        <option value="web">Web Design</option>
+        <option value="seo">SEO</option>
+        <option value="social">Social Media</option>
+        <option value="other">Other</option>
+      </select>
+
+      <label>How did you find us?</label>
+      <div class="inline">
+        <label><input type="radio" name="referral" value="Google" /> Google</label>
+        <label><input type="radio" name="referral" value="Friend" /> Friend</label>
+        <label><input type="radio" name="referral" value="Instagram" /> Instagram</label>
+      </div>
+
+      <label>Interested in:</label>
+      <div class="inline">
+        <label><input type="checkbox" name="interested_in" value="Website" /> Website</label>
+        <label><input type="checkbox" name="interested_in" value="Branding" /> Branding</label>
+        <label><input type="checkbox" name="interested_in" value="Consulting" /> Consulting</label>
+      </div>
+
+      <label for="attachment">Attach a File (won’t send, only filename)</label>
+      <input type="file" name="attachment" />
+
+      <label for="message">Your Message</label>
+      <textarea name="message" rows="5" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+
+    <div class="message" id="message"></div>
+  </div>
+
+  <!-- EmailJS script -->
+  <script>
+    (function () {
+      emailjs.init("WIbvb394pnh87hVLu"); // My EmailJS Public Key
+    })();
+
+    document.getElementById("full-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      // Optional: Get file name manually
+      const fileInput = document.querySelector('input[name="attachment"]');
+      if (fileInput.files.length > 0) {
+        const fileName = fileInput.files[0].name;
+        const hiddenInput = document.createElement("input");
+        hiddenInput.type = "hidden";
+        hiddenInput.name = "filename";
+        hiddenInput.value = fileName;
+        this.appendChild(hiddenInput);
+      }
+
+      emailjs.sendForm("service_45xhb8s", "template_49tnj0g", this)
+        .then(function (response) {
+          document.getElementById("message").innerText = "Form sent successfully!";
+        }, function (error) {
+          document.getElementById("message").innerText = "Sending failed. Try again.";
+        });
+
+      this.reset();
+    });
+  </script>
+</body>
+
+</html>
