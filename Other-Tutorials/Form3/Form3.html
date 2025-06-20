@@ -10,11 +10,14 @@
 
 <body>
   <div class="contact-container">
-    <form action="" class="contact-left">
+    <!-- This is a contact form that uses Web3Forms to submit data -->
+    <form action="https://api.web3forms.com/submit" method="POST" class="contact-left">
       <div class="contact-left-title">
         <h2>Get in touch</h2>
         <hr>
       </div>
+      <!-- The access key is used to authenticate the form submission -->
+      <input type="hidden" name="access_key" value="28685ee9-f992-46ad-ad9b-2acd570e40b0">
       <input type="text" name="name" placeholder="Your name" class="contact-inputs" required>
       <input type="email" name="email" placeholder="Your Email" class="contact-inputs" required>
       <textarea name="message" placeholder="Your message" class="contact-inputs" required></textarea>
