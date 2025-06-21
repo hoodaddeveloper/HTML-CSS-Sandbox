@@ -13,19 +13,40 @@
 </head>
 
 <body>
-
-  <div class="container mt-5">
-    <h1>Contact Me!</h1>
-    <form action="" class="row g-3">
-      <div class="col-md-6">
-        <label for="firstName" class="form-label">First Name</label>
-        <input type="text" class="form-control" id="firstName" required />
+  <div class="container py-5 d-flex justify-content-center">
+    <div class="col-lg-10 col-xl-8">
+      <div class="card shadow-lg border-0 rounded-4">
+        <div class="card-body p-5">
+          <h1 class="text-center text-primary mb-4">Contact Me!</h1>
+          <form class="row g-4">
+            <div class="col-md-6">
+              <label for="firstName" class="form-label">First Name</label>
+              <input type="text" class="form-control form-control-lg" id="firstName" required />
+            </div>
+            <div class="col-md-6">
+              <label for="lastName" class="form-label">Last Name</label>
+              <input type="text" class="form-control form-control-lg" id="lastName" required />
+            </div>
+            <div class="col-md-8">
+              <label for="emailInfo" class="form-label">E-mail</label>
+              <input type="email" class="form-control form-control-lg" id="emailInfo" required />
+            </div>
+            <div class="col-md-4">
+              <label for="phoneNumber" class="form-label">Phone Number</label>
+              <input type="tel" class="form-control form-control-lg" id="phoneNumber" placeholder="+49 170 1234567"
+                pattern="^\+49\s\d{3,4}\s\d{5,}$" />
+            </div>
+            <div class="col-12">
+              <label for="message" class="form-label">Message</label>
+              <textarea class="form-control form-control-lg" id="message" rows="4" required></textarea>
+            </div>
+            <div class="col-12 text-center">
+              <button type="submit" class="btn btn-primary btn-lg px-5">Submit</button>
+            </div>
+          </form>
+        </div>
       </div>
-      <div class="col-md-6">
-        <label for="lastName" class="form-label">Last Name</label>
-        <input type="text" class="form-control" id="lastName" required />
-      </div>
-    </form>
+    </div>
   </div>
 
   <!-- Bootstrap JavaScript Libraries -->
