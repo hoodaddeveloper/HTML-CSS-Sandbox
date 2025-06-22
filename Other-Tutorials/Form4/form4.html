@@ -18,27 +18,30 @@
       <div class="card shadow-lg border-0 rounded-4">
         <div class="card-body p-5">
           <h1 class="text-center text-primary mb-4">Contact Me!</h1>
-          <form class="row g-4" action="https://api.web3forms.com/submit" method="POST">
+          <!-- This is a contact form that uses Web3Forms to submit data -->
+          <form class="row g-4" id="form" method="POST">
+            <!-- This is a contact form that uses Web3Forms to submit data -->
+            <input type="hidden" name="access_key" value="28685ee9-f992-46ad-ad9b-2acd570e40b0">
             <div class="col-md-6">
               <label for="firstName" class="form-label">First Name</label>
-              <input type="text" class="form-control form-control-lg" id="firstName" required />
+              <input type="text" name="firstName" class="form-control form-control-lg" id="firstName" required />
             </div>
             <div class="col-md-6">
               <label for="lastName" class="form-label">Last Name</label>
-              <input type="text" class="form-control form-control-lg" id="lastName" required />
+              <input type="text" name="lastName" class="form-control form-control-lg" id="lastName" required />
             </div>
             <div class="col-md-8">
               <label for="emailInfo" class="form-label">E-mail</label>
-              <input type="email" class="form-control form-control-lg" id="emailInfo" required />
+              <input type="email" name="email" class="form-control form-control-lg" id="emailInfo" required />
             </div>
             <div class="col-md-4">
               <label for="phoneNumber" class="form-label">Phone Number</label>
-              <input type="tel" class="form-control form-control-lg" id="phoneNumber" placeholder="+49 170 1234567"
-                pattern="^\+49\s\d{3,4}\s\d{5,}$" />
+              <input type="tel" name="phone" class="form-control form-control-lg" id="phoneNumber"
+                placeholder="+49 170 1234567" />
             </div>
             <div class="col-12">
               <label for="message" class="form-label">Message</label>
-              <textarea class="form-control form-control-lg" id="message" rows="4" required></textarea>
+              <textarea name="message" class="form-control form-control-lg" id="message" rows="4" required></textarea>
             </div>
             <div class="col-12 text-center">
               <button type="submit" class="btn btn-primary btn-lg px-5">Submit</button>
@@ -48,7 +51,51 @@
       </div>
     </div>
   </div>
+  <!-- Result div to display the message after form submission -->
+  <div id="result"></div>
+  <!-- Result message will be displayed here after form submission -->
+  <script>
+    const form = document.getElementById('form');
+    const result = document.getElementById('result');
 
+    form.addEventListener('submit', function (e) {
+      const formData = new FormData(form);
+      e.preventDefault();
+
+      const object = Object.fromEntries(formData);
+      const json = JSON.stringify(object);
+
+      result.innerHTML = "Please wait..."
+
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: json
+      })
+        .then(async (response) => {
+          let json = await response.json();
+          if (response.status === 200) {
+            result.innerHTML = json.message;
+          } else {
+            console.log(response);
+            result.innerHTML = json.message;
+          }
+        })
+        .catch(error => {
+          console.log(error);
+          result.innerHTML = "Something went wrong!";
+        })
+        .then(function () {
+          form.reset();
+          setTimeout(() => {
+            result.style.display = "none";
+          }, 3000);
+        });
+    });
+  </script>
   <!-- Bootstrap JavaScript Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
     integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
