@@ -100,3 +100,74 @@ body {
     display: none;
   }
 }
+
+/* Youtube video screen */
+
+.cookieconsent-optin-marketing {
+  display: flex;
+  overflow: hidden;
+  margin: 3rem auto;
+  position: relative;
+  align-items: center;
+  border-radius: 10px;
+  justify-content: center;
+  background-color: #000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.cookieconsent-optin-marketing p {
+  padding: 1rem;
+  color: white;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.cookieconsent-optin-marketing button {
+  color: #fff;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  border: 1px solid #fff;
+  background-color: #ffffff22;
+  transition: background-color 0.3s ease;
+}
+
+.cookieconsent-optin-marketing button:hover {
+  background-color: #ffffff44;
+}
+
+/* Youtube video screen */
+.cookieconsent-optin-marketing {
+  display: flex;
+  overflow: hidden;
+  margin: 3rem auto;
+  position: relative;
+  align-items: center;
+  border-radius: 10px;
+  justify-content: center;
+  background-color: #000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.cookieconsent-optin-marketing p {
+  padding: 1rem;
+  color: white;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.cookieconsent-optin-marketing button {
+  color: #fff;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  border: 1px solid #fff;
+  background-color: #ffffff22;
+  transition: background-color 0.3s ease;
+}
+
+.cookieconsent-optin-marketing button:hover {
+  background-color: #ffffff44;
+}

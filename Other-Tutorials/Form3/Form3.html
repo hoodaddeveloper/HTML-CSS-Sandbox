@@ -37,10 +37,30 @@
     <div
       style="background-color:#000; width:100%; height:100%; display:flex; align-items:center; justify-content:center;">
       <p style="color:#fff; padding:1rem; text-align:center;">You must accept marketing cookies to view this
-        content.<br><button onclick="Cookiebot.renew()">Change consent</button></p>
+        content.<br></p>
     </div>
   </div>
 
+  <!-- This is the Cookiebot declaration that will be shown to the user -->
+  <script>
+    function loadMarketingContent() {
+      if (Cookiebot.consents && Cookiebot.consents.marketing) {
+        var elements = document.querySelectorAll('.cookieconsent-optin-marketing');
+        elements.forEach(function (el) {
+          var iframe = document.createElement("iframe");
+          iframe.setAttribute("width", el.style.width || "560");
+          iframe.setAttribute("height", el.style.height || "315");
+          iframe.setAttribute("src", el.getAttribute("data-src"));
+          iframe.setAttribute("allow", "autoplay; encrypted-media");
+          iframe.setAttribute("allowfullscreen", "");
+          el.replaceWith(iframe);
+        });
+      }
+    }
+
+    window.addEventListener("CookieConsentDeclarationLoaded", loadMarketingContent);
+    window.addEventListener("CookieConsentDialogClose", loadMarketingContent);
+  </script>
 </body>
 
 </html>
