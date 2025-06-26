@@ -5,39 +5,40 @@
   <title>Cookiebot Demo: Google Analytics & Facebook Pixel</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
-
   <!-- Cookiebot Script -->
   <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="99470bf7-d602-404f-8d6f-af21a3fed90d"
     data-blockingmode="auto" type="text/javascript"></script>
+  <!-- Cookiebot CSS -->
+  <style>
+    script[type="text/plain"] {
+      display: none !important;
+    }
+  </style>
 </head>
 
 <body class="d-flex flex-column min-vh-100">
-
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
     <div class="container">
       <a class="navbar-brand" href="#">Cookiebot Demo</a>
     </div>
   </nav>
-
   <!-- Main Content -->
   <main class="flex-grow-1">
     <div class="container py-5">
       <h1 class="mb-4 text-center">Google Analytics & Facebook Pixel Demo</h1>
       <p class="lead text-center mb-5">Diese Tracking-Skripte werden erst nach Zustimmung zu den Statistik- und
         Marketing-Cookies geladen.</p>
-
       <!-- Google Analytics -->
       <section class="mb-5">
         <h2>Google Analytics (Statistik)</h2>
         <p>Das Google Analytics Tracking-Skript ist datenschutzkonform mit Cookiebot eingebunden.</p>
         <pre><code>&lt;script type="text/plain" data-cookieconsent="statistics"&gt; ... &lt;/script&gt;</code></pre>
 
-        <script type="text/plain" data-cookieconsent="marketing">
+        <script type="text/plain" data-cookieconsent="statistics">
           (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
               (i[r].q = i[r].q || []).push(arguments)
@@ -49,7 +50,6 @@
           ga('send', 'pageview');
         </script>
       </section>
-
       <!-- Facebook Pixel -->
       <section>
         <h2>Facebook Pixel (Marketing)</h2>
@@ -74,14 +74,12 @@
       </section>
     </div>
   </main>
-
   <!-- Footer -->
   <footer class="bg-dark text-white text-center py-3 mt-auto">
     <div class="container">
       <small>&copy; 2025 Cookiebot Demo | Kontakt: mohammadkhafas@yahoo.com</small>
     </div>
   </footer>
-
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
     integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
